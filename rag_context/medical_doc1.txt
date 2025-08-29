@@ -1,0 +1,9 @@
+Warfarin
+
+Warfarin is an oral anticoagulant classified as a vitamin K antagonist (VKA). It is used to prevent and treat thromboembolic disorders, such as deep vein thrombosis (DVT), pulmonary embolism (PE), atrial fibrillation (to prevent stroke), and mechanical heart valve replacement (to prevent valve thrombosis). Warfarin works by inhibiting vitamin K-dependent clotting factors (factors II, VII, IX, and X). This reduces the blood’s ability to form clots, lowering the risk of thrombosis.
+
+Warfarin dosing is highly individualized and must be carefully monitored through INR (International Normalized Ratio) testing, which evaluates how long it takes the blood to clot. The initial dose usually ranges from 2 to 5 mg per day and is adjusted based on the INR response. In healthy, younger patients, an initial dose of 10 mg may occasionally be used under close monitoring. In elderly or frail patients, a lower starting dose of 1 to 2 mg is often preferred. The target INR range is typically between 2.0 and 3.0 for most conditions, such as atrial fibrillation and DVT, and between 2.5 and 3.5 for patients with mechanical heart valves. INR must be checked frequently during the initiation phase (every 2–3 days), and once stable, every 2–4 weeks.
+
+Warfarin has many interactions, including with foods rich in vitamin K (such as spinach, kale, and broccoli), and with numerous medications like antibiotics, NSAIDs, antifungals, and amiodarone. These interactions can significantly affect INR levels and bleeding risk. Warfarin is contraindicated in pregnancy due to its teratogenic effects, as well as in patients with active bleeding, severe uncontrolled hypertension, or severe liver disease.
+
+This information is intended for educational purposes only. Warfarin therapy must always be prescribed and managed by a qualified healthcare professional, based on regular INR monitoring and the patient’s clinical status.

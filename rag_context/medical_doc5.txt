@@ -1,0 +1,15 @@
+Echocardiography in the Evaluation of Aortic Stenosis: Diagnostic Criteria and Surgical Indications
+
+Aortic stenosis is a valvular disease characterized by narrowing of the aortic orifice, resulting in obstruction of systolic flow from the left ventricle to the aorta. Transthoracic echocardiography (TTE) is the diagnostic tool of choice.
+
+The main diagnostic criteria are:
+
+Aortic valve area (AVA): severe if < 1.0 cm²
+
+Mean gradient: severe if > 40 mmHg
+
+Transvalvular jet velocity: severe if > 4 m/s
+
+In the presence of left ventricular dysfunction (LVEF < 50%) or exertional symptoms (dyspnea, angina, syncope), surgical or transcatheter intervention (TAVI) is indicated. In asymptomatic patients with severe stenosis, risk markers (e.g., increased BNP, left ventricular hypertrophy, extensive calcifications) are assessed to determine early intervention.
+
+Stress echocardiography is useful for detecting the onset of symptoms or a drop in blood pressure. Ultrasound evaluation is crucial for guiding the timing of valve replacement.

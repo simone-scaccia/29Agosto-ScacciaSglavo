@@ -1,0 +1,11 @@
+Differential Diagnosis of Primary Headaches: Migraine, Tension-Type Headache, and Cluster Headache
+
+Primary headaches are neurological syndromes characterized by headache without an identifiable organic cause. The three main forms are migraine, tension-type headache, and cluster headache, each with specific diagnostic criteria according to the ICHD-3 (International Classification of Headache Disorders, 3rd edition).
+
+Migraine: Pulsating, unilateral pain of moderate to severe intensity, associated with nausea, photophobia, and phonophobia. It may be preceded by a transient neurological aura (e.g., visual, sensory).
+
+Tension-type headache: Bilateral, constricting ("circling") pain, mild to moderate, not aggravated by physical activity, and without nausea. This is the most common form.
+
+Cluster headache: recurrent, brief episodes (15-180 minutes) of severe periorbital pain associated with ipsilateral autonomic symptoms (lacrimation, nasal congestion, ptosis, miosis). It typically affects young males, with seasonal recurrence.
+
+A correct differential diagnosis requires a detailed history, the use of headache diaries, and any imaging tests to rule out secondary headaches.

@@ -1,0 +1,19 @@
+build_function_task:
+  description: >
+    Interpret the user's natural language query and convert it into a valid mathematical function in Python syntax.
+    The expression, if necessary, must use standard math functions (e.g., sin, cos, log).
+    The expression will be validated by an external tool.
+  expected_output: >
+    The function written in Python syntax, for example:
+    def add_two_plus_two():
+        return 2 + 2
+  agent: function_builder
+
+evaluate_function_task:
+  description: >
+    Evaluate and execute the function provided by the previous step.
+    If the function is invalid or was rejected by the validation tool, return a clear error message instead.
+  expected_output: >
+    A string starting with either 'Result: ' followed by the numeric output of the function,
+    or 'Error: ' followed by the error explanation.
+  agent: function_evaluator

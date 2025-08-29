@@ -1,0 +1,38 @@
+refine_query_task:
+  description: >
+    Analyze the user query: {query}
+    Refine and optimize it for better document search effectiveness.
+    Focus on extracting key concepts, clarifying ambiguous terms, and structuring
+    the query for optimal information retrieval.
+  expected_output: >
+    A refined and optimized version of the user query that clearly identifies
+    the key information needed and is structured for effective document search.
+  agent: query_refiner
+
+search_documents_task:
+  description: >
+    Use the refined query from the previous task to search through documents
+    using the RAG tool. Extract all relevant information that matches the
+    user's request (also partially). Focus on finding comprehensive and accurate data.
+  expected_output: >
+    Detailed information extracted from documents that relates to the refined query,
+    including specific facts, data points, and relevant context. If no relevant
+    information is found, clearly state this result.
+  agent: document_searcher
+  context:
+    - refine_query_tasks
+
+validate_and_respond_task:
+  description: >
+    Evaluate the search results from the document search task. If the found information
+    adequately addresses the original user query {query}, provide a comprehensive
+    and well-structured response. If the search results are insufficient, irrelevant,
+    or empty, return exactly "False".
+  expected_output: >
+    Either a complete, well-formatted answer based on the found information that
+    partially addresses the user's original query (INCLUDING THE SOURCES), or the exact word "False" if
+    no pertinent information was found in the documents.
+  agent: response_validator
+  context:
+    - refine_query_task
+    - search_documents_task

@@ -1,0 +1,21 @@
+research_task:
+  description: >
+    Conduct a thorough research about {query}
+    Make sure you find any interesting and relevant information.
+  expected_output: >
+    A text containing the most relevant informations about {query}
+  agent: researcher
+
+summary_task:
+  description: >
+    Create a comprehensive summary of the research findings about {query}.
+    Take the research results and create a clear, structured summary that highlights:
+    - Key findings and developments
+    - Most important trends
+    - Significant insights
+    - Main takeaways
+  expected_output: >
+    A well-structured summary in 3-5 paragraphs that captures the essence of the research findings about {query}
+  agent: summarizer
+  context:
+    - research_task

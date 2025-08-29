@@ -1,0 +1,9 @@
+Immunotherapy with Immune Checkpoint Inhibitors in Non-Small Cell Lung Cancer (NSCLC)
+
+In recent years, immunotherapy has revolutionized the treatment of non-small cell lung cancer (NSCLC). Immune checkpoint inhibitors, such as nivolumab, pembrolizumab, and atezolizumab, work by blocking PD-1/PD-L1 or CTLA-4 interactions, reactivating the antitumor immune response.
+
+Pembrolizumab, an anti-PD-1 monoclonal antibody, is indicated as first-line therapy for patients with metastatic NSCLC with PD-L1 expression ≥ 50% and without EGFR or ALK mutations. Efficacy is assessed by the tumor proportion score (TPS), calculated using immunohistochemistry.
+
+Response to immunotherapy may be accompanied by immune-mediated side effects, such as pneumonitis, colitis, and endocrinopathies (hypophysitis, thyroiditis), which require monitoring and, in some cases, treatment with corticosteroids.
+
+NCCN and ESMO guidelines include immunotherapy as the standard of care for NSCLC in various settings (first-line, maintenance, relapsed), often in combination with chemotherapy or as monotherapy.
