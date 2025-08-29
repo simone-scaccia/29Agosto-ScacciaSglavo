@@ -1,0 +1,30 @@
+file_analyzer_task:
+  description: >
+    Conduct a thorough analysis of the data inside the input file retrieved via the file_read_csv tool, explaining key insights and trends useful for an analyst presentation. Be sure to satisfy the input query: {query}
+  expected_output: >
+    A detailed analysis of the data inside the input file, highlighting key insights and trends.
+    Formatted as a list of bullet points representing the main findings.
+  agent: file_analyzer
+  tool: file_read_csv
+
+code_engineer_task:
+  description: >
+    Based on the analysis provided by the file_analyzer, create the necessary code to implement the required plots and visualizations. Use the documentation retrieved via the file_read_docs tool if needed.
+  expected_output: >
+    Python code that generates the required plots and visualizations based on the analysis.
+    Use only following libraries: matplotlib, seaborn, numpy, pandas.
+    Use only the following constructs: if, for.
+  agent: code_engineer
+  context:
+    - file_analyzer_task
+  tool: file_read_docs
+
+plot_generator_task:
+  description: >
+    Generate the plots and visualizations based on the code provided by the code_engineer. Save the plots in png files in the plots folder.
+  expected_output: >
+    Visualizations and plots that effectively communicate the insights derived from the data analysis.
+  agent: plot_generator
+  tool: code_interpreter
+  context:
+    - code_engineer_task

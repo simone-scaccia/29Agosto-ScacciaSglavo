@@ -8,6 +8,7 @@ from crewai.llm import LLM
 from search_rag_flow.crews.search_crew.search_crew import SearchCrew
 from search_rag_flow.crews.rag_crew.rag_crew import RagCrew
 from search_rag_flow.crews.math_crew.math_crew import MathCrew
+from search_rag_flow.crews.analysis_plot.analysis_plot import AnalysisPlotCrew
 
 class QueryProperties(BaseModel):
     """Represents the ethical evaluation of a user query.
@@ -60,7 +61,16 @@ class SearchRAGFlow(Flow[SearchRAGState]):
         """Prompt the user for a query and store it in flow state."""
         self.state.query = input("Insert the query: ")
 
+    
     @listen(get_query)
+    def generate_plot(self):
+        """Generate a plot based on the user query."""
+        print("Generating plot...")
+        AnalysisPlotCrew().crew().kickoff(inputs={
+            "query": self.state.query
+        })
+
+    # @listen(get_query)
     def check_ethical_and_topic(self):
         """Classify the query for ethics and topic (medicine vs math)."""
         print("Checking if the query is ethical...")
