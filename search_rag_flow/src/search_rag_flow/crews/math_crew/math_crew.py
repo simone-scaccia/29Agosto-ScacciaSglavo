@@ -16,6 +16,11 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 from search_rag_flow.tools.math_tool import validate_math_expression
+from crewai_tools import CodeInterpreterTool
+
+# Initialize the tool
+code_interpreter = CodeInterpreterTool()
+
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -73,12 +78,17 @@ class MathCrew():
         `function_evaluator` section in the agents configuration and is
         used to assess or verify the function produced by the builder.
 
+        This agent is equipped with the `code_interpreter` tool, which
+        allows it to safely execute and evaluate the generated Python
+        function in a controlled environment.
+
         Returns:
             Agent: A configured agent responsible for evaluating the
-            generated function.
+            generated function using the code_interpreter tool.
         """
         return Agent(
             config=self.agents_config['function_evaluator'], # type: ignore[index]
+            tools=[code_interpreter],
             verbose=True
         )
 
@@ -114,7 +124,8 @@ class MathCrew():
         """
         return Task(
             config=self.tasks_config['evaluate_function_task'], # type: ignore[index]
-            output_file='math_result.md'
+            output_file='math_result.md',
+            context=[self.build_function_task()]
         )
 
     @crew

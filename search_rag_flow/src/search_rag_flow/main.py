@@ -175,6 +175,7 @@ class SearchRAGFlow(Flow[SearchRAGState]):
         """Run the math crew for ethical math-related queries."""
         print("=================================================")
         print("The query is ethical and related to math.\n")
+        print("Query: ", self.state.query)
 
         math_response = MathCrew().crew().kickoff(inputs={
             "query": self.state.query})
@@ -187,6 +188,7 @@ def kickoff():
     """Kick off execution of the SearchRAGFlow."""
     poem_flow = SearchRAGFlow()
     poem_flow.kickoff()
+    poem_flow.plot()
 
 def plot():
     """Plot the flow graph for visualization/debugging."""
