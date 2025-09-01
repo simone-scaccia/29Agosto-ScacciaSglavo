@@ -56,15 +56,22 @@ class SearchRAGFlow(Flow[SearchRAGState]):
     to find relevant information and a math crew to perform calculations.
     """
     @start()
-    
     def get_query(self):
-        """Prompt the user for a query and store it in flow state."""
+        """Prompt the user for a query and store it in flow state.
+        
+        This method serves as the entry point of the flow, collecting the user's
+        input query and storing it in the flow state for subsequent processing.
+        """
         self.state.query = input("Insert the query: ")
 
     
     @listen(get_query)
     def generate_plot(self):
-        """Generate a plot based on the user query."""
+        """Generate a plot based on the user query.
+        
+        This method triggers the AnalysisPlotCrew to create visualizations
+        based on the user's query. It runs in parallel with other flow steps.
+        """
         print("Generating plot...")
         AnalysisPlotCrew().crew().kickoff(inputs={
             "query": self.state.query
@@ -72,7 +79,12 @@ class SearchRAGFlow(Flow[SearchRAGState]):
 
     # @listen(get_query)
     def check_ethical_and_topic(self):
-        """Classify the query for ethics and topic (medicine vs math)."""
+        """Classify the query for ethics and topic (medicine vs math).
+        
+        This method uses an LLM to evaluate whether the user query is ethical
+        and determine if it relates to medicine or mathematics. The evaluation
+        is stored in the flow state for routing decisions.
+        """
         print("Checking if the query is ethical...")
 
         ethical_llm = LLM(model="azure/gpt-4o", response_format=QueryProperties)
@@ -105,7 +117,19 @@ class SearchRAGFlow(Flow[SearchRAGState]):
         
     @router(check_ethical_and_topic)
     def split_ethical_and_topic(self):
-        """Route execution based on ethics and identified topic."""
+        """Route execution based on ethics and identified topic.
+        
+        This router method determines the next step in the flow based on the
+        ethical evaluation and topic classification of the user query.
+        
+        Returns:
+            str: The route identifier for the next flow step:
+                - "ethical_medicine": For ethical medical queries
+                - "ethical_math": For ethical mathematical queries  
+                - "ethical_not_medicine_not_math": For other ethical queries
+                - "not_ethical": For unethical queries
+                - "error": For unexpected evaluation results
+        """
         if self.state.ethical_query and self.state.ethical_json.is_medicine and not self.state.ethical_json.is_math:
             return "ethical_medicine"
         elif self.state.ethical_query and self.state.ethical_json.is_math and not self.state.ethical_json.is_medicine:
@@ -119,19 +143,33 @@ class SearchRAGFlow(Flow[SearchRAGState]):
 
     @listen("not_ethical")
     def handle_not_ethical(self):
-        """Notify and stop when the query is not ethical."""
+        """Notify and stop when the query is not ethical.
+        
+        This method handles the case where the user query has been deemed
+        unethical by the evaluation system. It displays a message and
+        terminates the flow execution.
+        """
         print("=================================================")
         print("The query is not ethical. Exiting...\n")
 
     @listen("error")
     def handle_error(self):
-        """Report unexpected errors during ethics/topic evaluation."""
+        """Report unexpected errors during ethics/topic evaluation.
+        
+        This method handles error cases that occur during the ethical
+        evaluation or topic classification process.
+        """
         print("=================================================")
         print("An error occurred during the check of the topic and the ethical property ")
 
     @listen("ethical_medicine")
     def rag_approach(self):
-        """Run the medicine RAG pipeline and store its response."""
+        """Run the medicine RAG pipeline and store its response.
+        
+        This method executes the RAG (Retrieval-Augmented Generation) pipeline
+        for medical queries using the RagCrew. It determines whether relevant
+        information was found and updates the flow state accordingly.
+        """
         print("The query is ethical and related to medicine.\n")
         print("Running a RAG approach...")
         print("===============================================================")
@@ -146,7 +184,16 @@ class SearchRAGFlow(Flow[SearchRAGState]):
 
     @router(rag_approach)
     def split_rag_info(self):
-        """Route based on whether relevant RAG info was found."""
+        """Route based on whether relevant RAG info was found.
+        
+        This router determines the next step based on whether the RAG system
+        found relevant information for the medical query.
+        
+        Returns:
+            str: The route identifier:
+                - "rag_info_found": When relevant information was found
+                - "rag_info_not_found": When no relevant information was found
+        """
         if self.state.found_rag_info:
             return "rag_info_found"
         else:
@@ -154,14 +201,26 @@ class SearchRAGFlow(Flow[SearchRAGState]):
 
     @listen("rag_info_found")
     def print_RAG_info(self):
-        """Print the RAG response when relevant information is found."""
+        """Print the RAG response when relevant information is found.
+        
+        This method displays the RAG-generated response when relevant medical
+        information was successfully retrieved and processed.
+        """
         print("Relevant information found with RAG:\n")
         print("===============================================================")
         print(self.state.rag_response)
 
     @listen(or_("ethical_not_medicine_not_math", "rag_info_not_found"))
     def search_on_web(self):
-        """Run the web search crew and persist a brief summary to file."""
+        """Run the web search crew and persist a brief summary to file.
+        
+        This method handles cases where either:
+        1. The query is ethical but not related to medicine or math
+        2. The query is medical but RAG found no relevant information
+        
+        It uses the SearchCrew to perform web searches and saves the results
+        to a summary file.
+        """
         if self.state.ethical_json.is_medicine == False:
             print("The query is ethical but not related to medicine.")
             print("===============================================================")
@@ -182,7 +241,12 @@ class SearchRAGFlow(Flow[SearchRAGState]):
     
     @listen("ethical_math")
     def handle_ethical_math(self):
-        """Run the math crew for ethical math-related queries."""
+        """Run the math crew for ethical math-related queries.
+        
+        This method handles mathematical queries that have been deemed ethical.
+        It uses the MathCrew to process the mathematical problem and stores
+        the result in the flow state.
+        """
         print("=================================================")
         print("The query is ethical and related to math.\n")
         print("Query: ", self.state.query)
@@ -195,13 +259,22 @@ class SearchRAGFlow(Flow[SearchRAGState]):
 
 
 def kickoff():
-    """Kick off execution of the SearchRAGFlow."""
+    """Kick off execution of the SearchRAGFlow.
+    
+    This function creates a new SearchRAGFlow instance, starts its execution,
+    and generates a visualization plot of the flow.
+    """
     poem_flow = SearchRAGFlow()
     poem_flow.kickoff()
     poem_flow.plot()
 
 def plot():
-    """Plot the flow graph for visualization/debugging."""
+    """Plot the flow graph for visualization/debugging.
+    
+    This function creates a SearchRAGFlow instance and generates a visual
+    representation of the flow structure for debugging and documentation
+    purposes.
+    """
     poem_flow = SearchRAGFlow()
     poem_flow.plot()
 
