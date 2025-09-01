@@ -10,7 +10,7 @@ from crewai_tools import (
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
-code_interpreter = CodeInterpreterTool()
+code_interpreter = CodeInterpreterTool(unsafe_mode=True, libraries_used=['pandas', 'matplotlib', 'seaborn', 'numpy'])
 file_read_csv = FileReadTool(file_path='files/AEP_hourly.csv')
 file_read_docs = FileReadTool(file_path='files/docs.txt')
 

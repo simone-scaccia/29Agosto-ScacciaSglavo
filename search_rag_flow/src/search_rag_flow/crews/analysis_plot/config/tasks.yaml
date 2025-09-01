@@ -12,7 +12,8 @@ code_engineer_task:
     Based on the analysis provided by the file_analyzer, create the necessary code to implement the required plots and visualizations. Use the documentation retrieved via the file_read_docs tool if needed.
   expected_output: >
     Python code that generates the required plots and visualizations based on the analysis.
-    Use only following libraries: matplotlib, seaborn, numpy, pandas.
+    Save the plots in png files in the plots folder.
+    Use only following libraries: matplotlib, seaborn, numpy, pandas. Do not use other libraries.
     Use only the following constructs: if, for.
   agent: code_engineer
   context:
@@ -21,9 +22,10 @@ code_engineer_task:
 
 plot_generator_task:
   description: >
-    Generate the plots and visualizations based on the code provided by the code_engineer. Save the plots in png files in the plots folder.
+    Execute the code provided by the code_engineer.
   expected_output: >
     Visualizations and plots that effectively communicate the insights derived from the data analysis.
+    If the code_interpreter tool return an error, abort the execution and return the error message. Alternatively, if no error occurs, return the success message.
   agent: plot_generator
   tool: code_interpreter
   context:
