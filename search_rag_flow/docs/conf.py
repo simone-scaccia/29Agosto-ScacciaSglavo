@@ -31,39 +31,9 @@ html_static_path = ['_static']
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",  # per Google/NumPy style
     "sphinx.ext.autodoc.typehints",
 ]
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
-
-
-# # Make sure the sidebar actually contains a local toc
-
-# html_sidebars = {
-
-#     "**": [
-
-#         "about.html",
-
-#         "searchbox.html",
-
-#         "localtoc.html",   # ← this renders the section menu
-
-#         "relations.html",
-
-#     ]
-
-# }
-
- 
-
-# # Nice-to-have options
-
-# html_theme_options = {
-
-#     "sidebar_includehidden": True,  # include hidden toctree entries
-
-#     "fixed_sidebar": True,          # sticky sidebar
-
-# }

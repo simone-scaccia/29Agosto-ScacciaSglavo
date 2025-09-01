@@ -15,6 +15,4 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-   main
-   tools
-   crews
+   modules

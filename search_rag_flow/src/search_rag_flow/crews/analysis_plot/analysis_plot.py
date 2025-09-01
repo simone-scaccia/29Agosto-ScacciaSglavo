@@ -1,14 +1,3 @@
-"""Analysis and plotting crew for data visualization tasks.
-
-This module defines the `AnalysisPlotCrew` which orchestrates a three-agent
-workflow for analyzing data files, engineering code solutions, and generating
-visualizations. The crew uses specialized tools for file reading and code
-execution to process CSV data and documentation files.
-
-The implementation relies on `crewai` decorators to declaratively define
-agents, tasks, and the crew composition with sequential processing.
-"""
-
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent

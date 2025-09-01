@@ -1,16 +1,3 @@
-"""Math crew definitions and configuration.
-
-This module declares the `MathCrew` class using CrewAI decorators to
-assemble agents and tasks involved in generating and evaluating
-mathematical functions. It exposes factory methods for two agents,
-two tasks, and a `Crew` instance that wires them together in a
-sequential process.
-
-The concrete agent and task configurations are expected to be provided
-via YAML files loaded by CrewAI (referenced through
-`self.agents_config` and `self.tasks_config`).
-"""
-
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent

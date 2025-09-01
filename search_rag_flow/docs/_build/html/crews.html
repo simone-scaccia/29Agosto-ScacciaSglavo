@@ -14,6 +14,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="search_rag_flow.crews.analysis_plot.analysis_plot" href="_generated/search_rag_flow.crews.analysis_plot.analysis_plot.html" />
     <link rel="prev" title="tools" href="tools.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -32,32 +33,24 @@
 
           <div class="body" role="main">
             
-  <section id="module-search_rag_flow.crews.analysis_plot.analysis_plot">
-<span id="crews"></span><h1>crews<a class="headerlink" href="#module-search_rag_flow.crews.analysis_plot.analysis_plot" title="Link to this heading">¶</a></h1>
-<p>Analysis and plotting crew for data visualization tasks.</p>
-<p>This module defines the <cite>AnalysisPlotCrew</cite> which orchestrates a three-agent
-workflow for analyzing data files, engineering code solutions, and generating
-visualizations. The crew uses specialized tools for file reading and code
-execution to process CSV data and documentation files.</p>
-<p>The implementation relies on <cite>crewai</cite> decorators to declaratively define
-agents, tasks, and the crew composition with sequential processing.</p>
-<p id="module-search_rag_flow.crews.math_crew.math_crew">Math crew definitions and configuration.</p>
-<p>This module declares the <cite>MathCrew</cite> class using CrewAI decorators to
-assemble agents and tasks involved in generating and evaluating
-mathematical functions. It exposes factory methods for two agents,
-two tasks, and a <cite>Crew</cite> instance that wires them together in a
-sequential process.</p>
-<p>The concrete agent and task configurations are expected to be provided
-via YAML files loaded by CrewAI (referenced through
-<cite>self.agents_config</cite> and <cite>self.tasks_config</cite>).</p>
-<p id="module-search_rag_flow.crews.search_crew.search_crew"><span id="module-search_rag_flow.crews.rag_crew.rag_crew"></span>Search crew definitions and configuration.</p>
-<p>This module defines the <cite>SearchCrew</cite> which orchestrates a simple
-two-agent workflow: a researcher that gathers information using a
-custom DuckDuckGo-based tool, and a summarizer that condenses the
-findings. It exposes tasks to perform the research and produce a
-summary, and bundles them into a sequential <cite>Crew</cite>.</p>
-<p>The implementation relies on <cite>crewai</cite> decorators to declaratively
-define agents, tasks, and the crew composition.</p>
+  <section id="crews">
+<h1>crews<a class="headerlink" href="#crews" title="Link to this heading">¶</a></h1>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_generated/search_rag_flow.crews.analysis_plot.analysis_plot.html#module-search_rag_flow.crews.analysis_plot.analysis_plot" title="search_rag_flow.crews.analysis_plot.analysis_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_rag_flow.crews.analysis_plot.analysis_plot</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_generated/search_rag_flow.crews.math_crew.math_crew.html#module-search_rag_flow.crews.math_crew.math_crew" title="search_rag_flow.crews.math_crew.math_crew"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_rag_flow.crews.math_crew.math_crew</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_generated/search_rag_flow.crews.rag_crew.rag_crew.html#module-search_rag_flow.crews.rag_crew.rag_crew" title="search_rag_flow.crews.rag_crew.rag_crew"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_rag_flow.crews.rag_crew.rag_crew</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_generated/search_rag_flow.crews.search_crew.search_crew.html#module-search_rag_flow.crews.search_crew.search_crew" title="search_rag_flow.crews.search_crew.search_crew"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_rag_flow.crews.search_crew.search_crew</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 
 
@@ -90,7 +83,13 @@ define agents, tasks, and the crew composition.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">crews</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">crews</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated/search_rag_flow.crews.analysis_plot.analysis_plot.html">search_rag_flow.crews.analysis_plot.analysis_plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/search_rag_flow.crews.math_crew.math_crew.html">search_rag_flow.crews.math_crew.math_crew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/search_rag_flow.crews.rag_crew.rag_crew.html">search_rag_flow.crews.rag_crew.rag_crew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/search_rag_flow.crews.search_crew.search_crew.html">search_rag_flow.crews.search_crew.search_crew</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
@@ -98,6 +97,7 @@ define agents, tasks, and the crew composition.</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="tools.html" title="previous chapter">tools</a></li>
+      <li>Next: <a href="_generated/search_rag_flow.crews.analysis_plot.analysis_plot.html" title="next chapter">search_rag_flow.crews.analysis_plot.analysis_plot</a></li>
   </ul></li>
 </ul>
 </div>

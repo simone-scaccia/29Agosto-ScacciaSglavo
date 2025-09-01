@@ -1,15 +1,3 @@
-"""Search crew definitions and configuration.
-
-This module defines the `SearchCrew` which orchestrates a simple
-two-agent workflow: a researcher that gathers information using a
-custom DuckDuckGo-based tool, and a summarizer that condenses the
-findings. It exposes tasks to perform the research and produce a
-summary, and bundles them into a sequential `Crew`.
-
-The implementation relies on `crewai` decorators to declaratively
-define agents, tasks, and the crew composition.
-"""
-
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
