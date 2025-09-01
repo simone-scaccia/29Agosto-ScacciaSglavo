@@ -1,0 +1,8 @@
+main
+=======
+
+.. automodule:: search_rag_flow.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

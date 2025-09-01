@@ -1,0 +1,7 @@
+search\_rag\_flow.crews.analysis\_plot package
+==============================================
+
+.. toctree::
+   :maxdepth: 4
+
+   search_rag_flow.crews.analysis_plot.analysis_plot
