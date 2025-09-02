@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>crewai.project.crew_base &mdash; SS MultiAgentSystem 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            SS MultiAgentSystem
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools.html">tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../math_tool.html">math_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../math_tool.html#search_rag_flow.tools.math_tool.is_math_function_valid"><code class="docutils literal notranslate"><span class="pre">is_math_function_valid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../math_tool.html#search_rag_flow.tools.math_tool.validate_math_expression.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rag_tool.html">rag_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings"><code class="docutils literal notranslate"><span class="pre">Settings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.persist_dir"><code class="docutils literal notranslate"><span class="pre">Settings.persist_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.chunk_size"><code class="docutils literal notranslate"><span class="pre">Settings.chunk_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.chunk_overlap"><code class="docutils literal notranslate"><span class="pre">Settings.chunk_overlap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.search_type"><code class="docutils literal notranslate"><span class="pre">Settings.search_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.k"><code class="docutils literal notranslate"><span class="pre">Settings.k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.fetch_k"><code class="docutils literal notranslate"><span class="pre">Settings.fetch_k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.mmr_lambda"><code class="docutils literal notranslate"><span class="pre">Settings.mmr_lambda</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.llm_model_name"><code class="docutils literal notranslate"><span class="pre">Settings.llm_model_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.get_embeddings"><code class="docutils literal notranslate"><span class="pre">get_embeddings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.get_llm"><code class="docutils literal notranslate"><span class="pre">get_llm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.load_real_documents_from_folder"><code class="docutils literal notranslate"><span class="pre">load_real_documents_from_folder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.split_documents"><code class="docutils literal notranslate"><span class="pre">split_documents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.build_faiss_vectorstore"><code class="docutils literal notranslate"><span class="pre">build_faiss_vectorstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.load_or_build_vectorstore"><code class="docutils literal notranslate"><span class="pre">load_or_build_vectorstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.make_retriever"><code class="docutils literal notranslate"><span class="pre">make_retriever()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.format_docs_for_prompt"><code class="docutils literal notranslate"><span class="pre">format_docs_for_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.build_rag_chain"><code class="docutils literal notranslate"><span class="pre">build_rag_chain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_answer"><code class="docutils literal notranslate"><span class="pre">rag_answer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_tool.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../research_ddg_tool.html">research_ddg_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../research_ddg_tool.html#search_rag_flow.tools.research_ddg_tool.research_ddg_tool.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../main.html">main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties"><code class="docutils literal notranslate"><span class="pre">QueryProperties</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.is_ethical"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_ethical</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.reason"><code class="docutils literal notranslate"><span class="pre">QueryProperties.reason</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.is_medicine"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_medicine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.is_math"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_math</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.model_config"><code class="docutils literal notranslate"><span class="pre">QueryProperties.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState"><code class="docutils literal notranslate"><span class="pre">SearchRAGState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.ethical_json"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.ethical_json</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.ethical_query"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.ethical_query</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.topic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.query"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.query</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.summary"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.summary</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.found_rag_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.found_rag_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.rag_response"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.rag_response</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.math_response"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.math_response</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.model_config"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.get_query"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.get_query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.generate_plot"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.generate_plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.check_ethical_and_topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.check_ethical_and_topic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.split_ethical_and_topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.split_ethical_and_topic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.handle_not_ethical"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_not_ethical()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.handle_error"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.rag_approach"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.rag_approach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.split_rag_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.split_rag_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.print_RAG_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.print_RAG_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.search_on_web"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.search_on_web()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.handle_ethical_math"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_ethical_math()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.kickoff"><code class="docutils literal notranslate"><span class="pre">kickoff()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../crews.html">crews</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#analysisplotcrew">AnalysisPlotCrew</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../crews.html#search_rag_flow.crews.analysis_plot.analysis_plot.AnalysisPlotCrew"><code class="docutils literal notranslate"><span class="pre">AnalysisPlotCrew</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../crews.html#search_rag_flow.crews.analysis_plot.analysis_plot.CrewBase"><code class="docutils literal notranslate"><span class="pre">CrewBase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#mathcrew">MathCrew</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../crews.html#search_rag_flow.crews.math_crew.math_crew.MathCrew"><code class="docutils literal notranslate"><span class="pre">MathCrew</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#ragcrew">RagCrew</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../crews.html#search_rag_flow.crews.rag_crew.rag_crew.RagCrew"><code class="docutils literal notranslate"><span class="pre">RagCrew</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#searchcrew">SearchCrew</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../crews.html#search_rag_flow.crews.search_crew.search_crew.SearchCrew"><code class="docutils literal notranslate"><span class="pre">SearchCrew</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SS MultiAgentSystem</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">crewai.project.crew_base</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for crewai.project.crew_base</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">crewai.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseTool</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="nb">type</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;Base decorator for creating crew classes with configuration and function management.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="CrewBase">
+<a class="viewcode-back" href="../../../crews.html#search_rag_flow.crews.analysis_plot.analysis_plot.CrewBase">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">CrewBase</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Wraps a class with crew functionality and configuration management.&quot;&quot;&quot;</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">WrappedClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
+        <span class="n">is_crew_class</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># type: ignore</span>
+
+        <span class="c1"># Get the directory of the class being decorated</span>
+        <span class="n">base_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="bp">cls</span><span class="p">))</span><span class="o">.</span><span class="n">parent</span>
+
+        <span class="n">original_agents_config_path</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;agents_config&quot;</span><span class="p">,</span> <span class="s2">&quot;config/agents.yaml&quot;</span>
+        <span class="p">)</span>
+        <span class="n">original_tasks_config_path</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;tasks_config&quot;</span><span class="p">,</span> <span class="s2">&quot;config/tasks.yaml&quot;</span><span class="p">)</span>
+
+        <span class="n">mcp_server_params</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;mcp_server_params&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">load_configurations</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_all_agent_variables</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_all_task_variables</span><span class="p">()</span>
+            <span class="c1"># Preserve all decorated functions</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_original_functions</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">name</span><span class="p">:</span> <span class="n">method</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">method</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
+                    <span class="nb">hasattr</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span>
+                        <span class="s2">&quot;is_task&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;is_agent&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;is_before_kickoff&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;is_after_kickoff&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;is_kickoff&quot;</span><span class="p">,</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+            <span class="c1"># Store specific function types</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_original_tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_original_functions</span><span class="p">,</span> <span class="s2">&quot;is_task&quot;</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_original_agents</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_original_functions</span><span class="p">,</span> <span class="s2">&quot;is_agent&quot;</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_before_kickoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_original_functions</span><span class="p">,</span> <span class="s2">&quot;is_before_kickoff&quot;</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_after_kickoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_original_functions</span><span class="p">,</span> <span class="s2">&quot;is_after_kickoff&quot;</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_kickoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_original_functions</span><span class="p">,</span> <span class="s2">&quot;is_kickoff&quot;</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Add close mcp server method to after kickoff</span>
+            <span class="n">bound_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_close_mcp_server_method</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_after_kickoff</span><span class="p">[</span><span class="s1">&#39;_close_mcp_server&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bound_method</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_create_close_mcp_server_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">def</span><span class="w"> </span><span class="nf">_close_mcp_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+                <span class="n">adapter</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_mcp_server_adapter&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">adapter</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error stopping MCP server: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">outputs</span>
+
+            <span class="n">_close_mcp_server</span><span class="o">.</span><span class="n">is_after_kickoff</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+            <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">_close_mcp_server</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">get_mcp_tools</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tool_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">BaseTool</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mcp_server_params</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[]</span>
+
+            <span class="kn">from</span><span class="w"> </span><span class="nn">crewai_tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">MCPServerAdapter</span>
+
+            <span class="n">adapter</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_mcp_server_adapter&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">adapter</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_mcp_server_adapter</span> <span class="o">=</span> <span class="n">MCPServerAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mcp_server_params</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mcp_server_adapter</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">filter_by_names</span><span class="p">(</span><span class="n">tool_names</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">)</span>
+
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">load_configurations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Load agent and task configurations from YAML files.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_agents_config_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">agents_config_path</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">base_directory</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_agents_config_path</span>
+                <span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_yaml</span><span class="p">(</span><span class="n">agents_config_path</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Agent config file not found at </span><span class="si">{</span><span class="n">agents_config_path</span><span class="si">}</span><span class="s2">. &quot;</span>
+                        <span class="s2">&quot;Proceeding with empty agent configurations.&quot;</span>
+                    <span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">&quot;No agent configuration path provided. Proceeding with empty agent configurations.&quot;</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_tasks_config_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">tasks_config_path</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">base_directory</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_tasks_config_path</span>
+                <span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_yaml</span><span class="p">(</span><span class="n">tasks_config_path</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Task config file not found at </span><span class="si">{</span><span class="n">tasks_config_path</span><span class="si">}</span><span class="s2">. &quot;</span>
+                        <span class="s2">&quot;Proceeding with empty task configurations.&quot;</span>
+                    <span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">&quot;No task configuration path provided. Proceeding with empty task configurations.&quot;</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="nd">@staticmethod</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">load_yaml</span><span class="p">(</span><span class="n">config_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File not found: </span><span class="si">{</span><span class="n">config_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">raise</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_get_all_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="n">name</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+            <span class="p">}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_filter_functions</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="n">name</span><span class="p">:</span> <span class="n">func</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">functions</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attribute</span><span class="p">)</span>
+            <span class="p">}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">map_all_agent_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">all_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_all_functions</span><span class="p">()</span>
+            <span class="n">llms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_llm&quot;</span><span class="p">)</span>
+            <span class="n">tool_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_tool&quot;</span><span class="p">)</span>
+            <span class="n">cache_handler_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_cache_handler&quot;</span>
+            <span class="p">)</span>
+            <span class="n">callbacks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_callback&quot;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">agent_name</span><span class="p">,</span> <span class="n">agent_info</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_map_agent_variables</span><span class="p">(</span>
+                    <span class="n">agent_name</span><span class="p">,</span>
+                    <span class="n">agent_info</span><span class="p">,</span>
+                    <span class="n">llms</span><span class="p">,</span>
+                    <span class="n">tool_functions</span><span class="p">,</span>
+                    <span class="n">cache_handler_functions</span><span class="p">,</span>
+                    <span class="n">callbacks</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_map_agent_variables</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">agent_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">agent_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+            <span class="n">llms</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">tool_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">cache_handler_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">callbacks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">llm</span> <span class="o">:=</span> <span class="n">agent_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;llm&quot;</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;llm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">llms</span><span class="p">[</span><span class="n">llm</span><span class="p">]()</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;llm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">llm</span>
+
+            <span class="k">if</span> <span class="n">tools</span> <span class="o">:=</span> <span class="n">agent_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tools&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;tools&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">tool_functions</span><span class="p">[</span><span class="n">tool</span><span class="p">]()</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">tools</span>
+                <span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">function_calling_llm</span> <span class="o">:=</span> <span class="n">agent_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;function_calling_llm&quot;</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;function_calling_llm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">llms</span><span class="p">[</span><span class="n">function_calling_llm</span><span class="p">]()</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;function_calling_llm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">function_calling_llm</span>
+
+            <span class="k">if</span> <span class="n">step_callback</span> <span class="o">:=</span> <span class="n">agent_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;step_callback&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;step_callback&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">callbacks</span><span class="p">[</span>
+                    <span class="n">step_callback</span>
+                <span class="p">]()</span>
+
+            <span class="k">if</span> <span class="n">cache_handler</span> <span class="o">:=</span> <span class="n">agent_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cache_handler&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">agents_config</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="s2">&quot;cache_handler&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">cache_handler_functions</span><span class="p">[</span><span class="n">cache_handler</span><span class="p">]()</span>
+                <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">map_all_task_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">all_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_all_functions</span><span class="p">()</span>
+            <span class="n">agents</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_agent&quot;</span><span class="p">)</span>
+            <span class="n">tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_task&quot;</span><span class="p">)</span>
+            <span class="n">output_json_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_output_json&quot;</span>
+            <span class="p">)</span>
+            <span class="n">tool_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_tool&quot;</span><span class="p">)</span>
+            <span class="n">callback_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span><span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_callback&quot;</span><span class="p">)</span>
+            <span class="n">output_pydantic_functions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_functions</span><span class="p">(</span>
+                <span class="n">all_functions</span><span class="p">,</span> <span class="s2">&quot;is_output_pydantic&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">task_name</span><span class="p">,</span> <span class="n">task_info</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_map_task_variables</span><span class="p">(</span>
+                    <span class="n">task_name</span><span class="p">,</span>
+                    <span class="n">task_info</span><span class="p">,</span>
+                    <span class="n">agents</span><span class="p">,</span>
+                    <span class="n">tasks</span><span class="p">,</span>
+                    <span class="n">output_json_functions</span><span class="p">,</span>
+                    <span class="n">tool_functions</span><span class="p">,</span>
+                    <span class="n">callback_functions</span><span class="p">,</span>
+                    <span class="n">output_pydantic_functions</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_map_task_variables</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">task_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">task_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+            <span class="n">agents</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">tasks</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">output_json_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">tool_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">callback_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+            <span class="n">output_pydantic_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">],</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">context_list</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;context&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;context&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">tasks</span><span class="p">[</span><span class="n">context_task_name</span><span class="p">]()</span> <span class="k">for</span> <span class="n">context_task_name</span> <span class="ow">in</span> <span class="n">context_list</span>
+                <span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">tools</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tools&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;tools&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">tool_functions</span><span class="p">[</span><span class="n">tool</span><span class="p">]()</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">tools</span>
+                <span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">agent_name</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;agent&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">agents</span><span class="p">[</span><span class="n">agent_name</span><span class="p">]()</span>
+
+            <span class="k">if</span> <span class="n">output_json</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output_json&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;output_json&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output_json_functions</span><span class="p">[</span>
+                    <span class="n">output_json</span>
+                <span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">output_pydantic</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output_pydantic&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;output_pydantic&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">output_pydantic_functions</span><span class="p">[</span><span class="n">output_pydantic</span><span class="p">]</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">callbacks</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;callbacks&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;callbacks&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">callback_functions</span><span class="p">[</span><span class="n">callback</span><span class="p">]()</span> <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="n">callbacks</span>
+                <span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">guardrail</span> <span class="o">:=</span> <span class="n">task_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;guardrail&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tasks_config</span><span class="p">[</span><span class="n">task_name</span><span class="p">][</span><span class="s2">&quot;guardrail&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">guardrail</span>
+
+    <span class="c1"># Include base class (qual)name in the wrapper class (qual)name.</span>
+    <span class="n">WrappedClass</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">CrewBase</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+    <span class="n">WrappedClass</span><span class="o">.</span><span class="vm">__qualname__</span> <span class="o">=</span> <span class="n">CrewBase</span><span class="o">.</span><span class="vm">__qualname__</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+    <span class="n">WrappedClass</span><span class="o">.</span><span class="n">_crew_name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">WrappedClass</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sglavo Scaccia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

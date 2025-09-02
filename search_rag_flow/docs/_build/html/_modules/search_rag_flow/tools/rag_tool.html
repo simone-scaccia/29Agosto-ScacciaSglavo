@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>search_rag_flow.tools.rag_tool &mdash; SS MultiAgentSystem 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            SS MultiAgentSystem
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools.html">tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../math_tool.html">math_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../math_tool.html#search_rag_flow.tools.math_tool.is_math_function_valid"><code class="docutils literal notranslate"><span class="pre">is_math_function_valid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../math_tool.html#search_rag_flow.tools.math_tool.validate_math_expression.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rag_tool.html">rag_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings"><code class="docutils literal notranslate"><span class="pre">Settings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.persist_dir"><code class="docutils literal notranslate"><span class="pre">Settings.persist_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.chunk_size"><code class="docutils literal notranslate"><span class="pre">Settings.chunk_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.chunk_overlap"><code class="docutils literal notranslate"><span class="pre">Settings.chunk_overlap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.search_type"><code class="docutils literal notranslate"><span class="pre">Settings.search_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.k"><code class="docutils literal notranslate"><span class="pre">Settings.k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.fetch_k"><code class="docutils literal notranslate"><span class="pre">Settings.fetch_k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.mmr_lambda"><code class="docutils literal notranslate"><span class="pre">Settings.mmr_lambda</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.llm_model_name"><code class="docutils literal notranslate"><span class="pre">Settings.llm_model_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.get_embeddings"><code class="docutils literal notranslate"><span class="pre">get_embeddings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.get_llm"><code class="docutils literal notranslate"><span class="pre">get_llm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.load_real_documents_from_folder"><code class="docutils literal notranslate"><span class="pre">load_real_documents_from_folder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.split_documents"><code class="docutils literal notranslate"><span class="pre">split_documents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.build_faiss_vectorstore"><code class="docutils literal notranslate"><span class="pre">build_faiss_vectorstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.load_or_build_vectorstore"><code class="docutils literal notranslate"><span class="pre">load_or_build_vectorstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.make_retriever"><code class="docutils literal notranslate"><span class="pre">make_retriever()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.format_docs_for_prompt"><code class="docutils literal notranslate"><span class="pre">format_docs_for_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.build_rag_chain"><code class="docutils literal notranslate"><span class="pre">build_rag_chain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_answer"><code class="docutils literal notranslate"><span class="pre">rag_answer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_tool.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../research_ddg_tool.html">research_ddg_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../research_ddg_tool.html#search_rag_flow.tools.research_ddg_tool.research_ddg_tool.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../main.html">main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties"><code class="docutils literal notranslate"><span class="pre">QueryProperties</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.is_ethical"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_ethical</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.reason"><code class="docutils literal notranslate"><span class="pre">QueryProperties.reason</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.is_medicine"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_medicine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.is_math"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_math</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.QueryProperties.model_config"><code class="docutils literal notranslate"><span class="pre">QueryProperties.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState"><code class="docutils literal notranslate"><span class="pre">SearchRAGState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.ethical_json"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.ethical_json</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.ethical_query"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.ethical_query</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.topic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.query"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.query</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.summary"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.summary</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.found_rag_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.found_rag_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.rag_response"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.rag_response</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.math_response"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.math_response</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGState.model_config"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.get_query"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.get_query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.generate_plot"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.generate_plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.check_ethical_and_topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.check_ethical_and_topic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.split_ethical_and_topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.split_ethical_and_topic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.handle_not_ethical"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_not_ethical()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.handle_error"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.rag_approach"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.rag_approach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.split_rag_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.split_rag_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.print_RAG_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.print_RAG_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.search_on_web"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.search_on_web()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../main.html#search_rag_flow.main.SearchRAGFlow.handle_ethical_math"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_ethical_math()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.kickoff"><code class="docutils literal notranslate"><span class="pre">kickoff()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../main.html#search_rag_flow.main.plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../crews.html">crews</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#analysisplotcrew">AnalysisPlotCrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#module-search_rag_flow.crews.math_crew.math_crew">MathCrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#module-search_rag_flow.crews.rag_crew.rag_crew">RagCrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../crews.html#module-search_rag_flow.crews.search_crew.search_crew">SearchCrew</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SS MultiAgentSystem</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">search_rag_flow.tools.rag_tool</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for search_rag_flow.tools.rag_tool</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;RAG tools built on LangChain, FAISS, and Azure OpenAI.</span>
+
+<span class="sd">This module provides utilities to load and split local documents, build or</span>
+<span class="sd">load a FAISS vector store, configure a retriever, and compose a simple RAG</span>
+<span class="sd">chain that answers questions grounded in retrieved context. It also exposes a</span>
+<span class="sd">`rag_tool` entry point suitable for use with CrewAI.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">crewai.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">tool</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.chat_models</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_chat_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.embeddings</span><span class="w"> </span><span class="kn">import</span> <span class="n">AzureOpenAIEmbeddings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_community.document_loaders</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextLoader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.text_splitter</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_community.vectorstores</span><span class="w"> </span><span class="kn">import</span> <span class="n">FAISS</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StrOutputParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.runnables</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunnablePassthrough</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;AZURE_OPENAI_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AZURE_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;AZURE_OPENAI_ENDPOINT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AZURE_API_BASE&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;AZURE_OPENAI_CHAT_DEPLOYMENT_NAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;LLM_DEPLOYMENT_NAME&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Settings">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for RAG components.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        persist_dir: Directory where the FAISS index is persisted.</span>
+<span class="sd">        chunk_size: Target character length for text chunks.</span>
+<span class="sd">        chunk_overlap: Overlap in characters between consecutive chunks.</span>
+<span class="sd">        search_type: Retrieval mode, either &quot;mmr&quot; or &quot;similarity&quot;.</span>
+<span class="sd">        k: Number of final results returned by the retriever.</span>
+<span class="sd">        fetch_k: Number of initial candidates considered (used by MMR).</span>
+<span class="sd">        mmr_lambda: Diversification parameter for MMR (0=max diversity, 1=max relevance).</span>
+<span class="sd">        llm_model_name: Deployment/model name for the chat model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Persistenza FAISS</span>
+    <span class="n">persist_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;faiss_index_example&quot;</span>
+    <span class="c1"># Text splitting</span>
+    <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">700</span>
+    <span class="n">chunk_overlap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="c1"># Retriever (MMR)</span>
+    <span class="n">search_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mmr&quot;</span>        <span class="c1"># &quot;mmr&quot; o &quot;similarity&quot;</span>
+    <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span>                      <span class="c1"># risultati finali</span>
+    <span class="n">fetch_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span>               <span class="c1"># candidati iniziali (per MMR)</span>
+    <span class="n">mmr_lambda</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span>         <span class="c1"># 0 = diversificazione massima, 1 = pertinenza massima</span>
+    <span class="c1"># LM Studio (OpenAI-compatible)</span>
+    <span class="n">llm_model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o&quot;</span>  <span class="c1"># nome del modello in LM Studio, via env var</span></div>
+
+
+<span class="n">SETTINGS</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+<span class="c1"># =========================</span>
+<span class="c1"># Componenti di base</span>
+<span class="c1"># =========================</span>
+
+<div class="viewcode-block" id="get_embeddings">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.get_embeddings">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_embeddings</span><span class="p">(</span><span class="n">settings</span><span class="p">:</span> <span class="n">Settings</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AzureOpenAIEmbeddings</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an Azure OpenAI embeddings client.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        settings: RAG configuration.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        AzureOpenAIEmbeddings: Configured embeddings client.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">AzureOpenAIEmbeddings</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;text-embedding-ada-002&quot;</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_llm">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.get_llm">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_llm</span><span class="p">(</span><span class="n">settings</span><span class="p">:</span> <span class="n">Settings</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the chat model client.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        settings: RAG configuration.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Any: A chat model instance initialized via LangChain.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">init_chat_model</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">llm_model_name</span><span class="p">,</span> <span class="n">model_provider</span><span class="o">=</span><span class="s2">&quot;azure_openai&quot;</span><span class="p">,</span> <span class="n">api_version</span><span class="o">=</span><span class="s2">&quot;2024-12-01-preview&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="load_real_documents_from_folder">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.load_real_documents_from_folder">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_real_documents_from_folder</span><span class="p">(</span><span class="n">folder_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load `.txt` and `.md` files from a folder as LangChain documents.</span>
+
+<span class="sd">    Each document is tagged with a `source` metadata field for citation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        folder_path: Absolute or relative path to the folder containing text files.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[Document]: Loaded documents with `source` metadata populated.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the folder does not exist or is not a directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>
+    <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">folder</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">folder</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La cartella &#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}</span><span class="s2">&#39; non esiste o non è una directory.&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="n">folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/*&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.md&quot;</span><span class="p">]:</span>
+            <span class="k">continue</span>  <span class="c1"># ignora file non supportati</span>
+
+        <span class="n">loader</span> <span class="o">=</span> <span class="n">TextLoader</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+        <span class="c1"># Aggiunge il metadato &#39;source&#39; per citazioni (es. nome del file)</span>
+        <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">:</span>
+            <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">name</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">])</span>
+
+        <span class="n">documents</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">documents</span></div>
+
+
+<div class="viewcode-block" id="split_documents">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.split_documents">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">split_documents</span><span class="p">(</span><span class="n">docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">],</span> <span class="n">settings</span><span class="p">:</span> <span class="n">Settings</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Split documents into semantically coherent chunks.</span>
+
+<span class="sd">    Uses a recursive character splitter with multiple separators and the</span>
+<span class="sd">    configured chunk size and overlap to optimize retrieval quality.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        docs: Documents to split.</span>
+<span class="sd">        settings: RAG configuration.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[Document]: Chunked documents.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">(</span>
+        <span class="n">chunk_size</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">,</span>
+        <span class="n">chunk_overlap</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">chunk_overlap</span><span class="p">,</span>
+        <span class="n">separators</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;. &quot;</span><span class="p">,</span> <span class="s2">&quot;? &quot;</span><span class="p">,</span> <span class="s2">&quot;! &quot;</span><span class="p">,</span> <span class="s2">&quot;; &quot;</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span>
+            <span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># fallback aggressivo</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="build_faiss_vectorstore">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.build_faiss_vectorstore">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_faiss_vectorstore</span><span class="p">(</span><span class="n">chunks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">],</span> <span class="n">embeddings</span><span class="p">:</span> <span class="n">AzureOpenAIEmbeddings</span><span class="p">,</span> <span class="n">persist_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FAISS</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Build a FAISS vector store from chunked documents and persist it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        chunks: Chunked documents to index.</span>
+<span class="sd">        embeddings: Embeddings model to encode chunks.</span>
+<span class="sd">        persist_dir: Directory where the FAISS index will be saved.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        FAISS: The created FAISS vector store instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Determina la dimensione dell&#39;embedding</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">FAISS</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span>
+        <span class="n">documents</span><span class="o">=</span><span class="n">chunks</span><span class="p">,</span>
+        <span class="n">embedding</span><span class="o">=</span><span class="n">embeddings</span>
+    <span class="p">)</span>
+
+    <span class="n">Path</span><span class="p">(</span><span class="n">persist_dir</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vs</span><span class="o">.</span><span class="n">save_local</span><span class="p">(</span><span class="n">persist_dir</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vs</span></div>
+
+
+<div class="viewcode-block" id="load_or_build_vectorstore">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.load_or_build_vectorstore">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_or_build_vectorstore</span><span class="p">(</span><span class="n">settings</span><span class="p">:</span> <span class="n">Settings</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">:</span> <span class="n">AzureOpenAIEmbeddings</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">FAISS</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load a persisted FAISS vector store or build it if missing.</span>
+
+<span class="sd">    This will attempt to load the index from ``settings.persist_dir``. If the</span>
+<span class="sd">    files are not present, the function splits documents and builds a new</span>
+<span class="sd">    index, saving it to disk.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        settings: RAG configuration.</span>
+<span class="sd">        embeddings: Embeddings model used for encoding.</span>
+<span class="sd">        docs: Source documents to (re)build the index from if needed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        FAISS: Loaded or newly created FAISS vector store.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">persist_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">persist_dir</span><span class="p">)</span>
+    <span class="n">index_file</span> <span class="o">=</span> <span class="n">persist_path</span> <span class="o">/</span> <span class="s2">&quot;index.faiss&quot;</span>
+    <span class="n">meta_file</span> <span class="o">=</span> <span class="n">persist_path</span> <span class="o">/</span> <span class="s2">&quot;index.pkl&quot;</span>
+
+    <span class="k">if</span> <span class="n">index_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="n">meta_file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="c1"># Dal 2024/2025 molte build richiedono il flag &#39;allow_dangerous_deserialization&#39; per caricare pkl locali</span>
+        <span class="k">return</span> <span class="n">FAISS</span><span class="o">.</span><span class="n">load_local</span><span class="p">(</span>
+            <span class="n">settings</span><span class="o">.</span><span class="n">persist_dir</span><span class="p">,</span>
+            <span class="n">embeddings</span><span class="p">,</span>
+            <span class="n">allow_dangerous_deserialization</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">split_documents</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">settings</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">build_faiss_vectorstore</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">persist_dir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="make_retriever">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.make_retriever">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_retriever</span><span class="p">(</span><span class="n">vector_store</span><span class="p">:</span> <span class="n">FAISS</span><span class="p">,</span> <span class="n">settings</span><span class="p">:</span> <span class="n">Settings</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configure the retriever for the given vector store.</span>
+
+<span class="sd">    Uses MMR (Maximal Marginal Relevance) when ``settings.search_type == &#39;mmr&#39;``</span>
+<span class="sd">    to reduce redundancy and improve coverage; otherwise uses plain similarity.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vector_store: The FAISS vector store to wrap as a retriever.</span>
+<span class="sd">        settings: RAG configuration controlling retrieval behavior.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        BaseRetriever: A configured retriever instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">search_type</span> <span class="o">==</span> <span class="s2">&quot;mmr&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">vector_store</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span>
+            <span class="n">search_type</span><span class="o">=</span><span class="s2">&quot;mmr&quot;</span><span class="p">,</span>
+            <span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;fetch_k&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">fetch_k</span><span class="p">,</span> <span class="s2">&quot;lambda_mult&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">mmr_lambda</span><span class="p">},</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">vector_store</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span>
+            <span class="n">search_type</span><span class="o">=</span><span class="s2">&quot;similarity&quot;</span><span class="p">,</span>
+            <span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">k</span><span class="p">},</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="format_docs_for_prompt">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.format_docs_for_prompt">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">format_docs_for_prompt</span><span class="p">(</span><span class="n">docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Format retrieved documents into a prompt-ready context string.</span>
+
+<span class="sd">    Each document is prefixed with a bracketed source tag for downstream</span>
+<span class="sd">    citation, e.g. ``[source:FILE]``.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        docs: Documents returned by the retriever.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: A newline-separated string suitable for inclusion in the prompt.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;doc</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[source:</span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">page_content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="build_rag_chain">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.build_rag_chain">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_rag_chain</span><span class="p">(</span><span class="n">llm</span><span class="p">,</span> <span class="n">retriever</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compose the RAG chain: retrieval -&gt; prompt -&gt; LLM -&gt; parsing.</span>
+
+<span class="sd">    The chain injects the retrieved context and the user question into a</span>
+<span class="sd">    system+human prompt and parses the model output to a string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        llm: Chat model instance to generate the final answer.</span>
+<span class="sd">        retriever: Retriever used to fetch relevant documents.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Runnable: A LangChain runnable that accepts a question string and</span>
+<span class="sd">        returns a grounded answer string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">system_prompt</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;You are a personal assistant. Please respond in English.&quot;</span>
+        <span class="s2">&quot;Use only the CONTENT and INFORMATION in context.&quot;</span>
+        <span class="s2">&quot;Include citations in square brackets in the format [source:...].&quot;</span>
+        <span class="s2">&quot;If the information is missing, state that it is not available.&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">prompt_messages</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="n">system_prompt</span><span class="p">)]</span>
+
+    <span class="c1"># Aggiunge ultima domanda con placeholder {question} e {context}</span>
+    <span class="n">prompt_messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Question:</span><span class="se">\n</span><span class="si">{question}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Context:</span><span class="se">\n</span><span class="si">{context}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Instructions:</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;1) Answer only with information contained in the context.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;2) Always cite relevant sources in the format [source:FILE].&quot;</span>
+    <span class="p">))</span>
+
+    <span class="n">prompt_template</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">(</span><span class="n">prompt_messages</span><span class="p">)</span>
+
+    <span class="c1"># LCEL: dict -&gt; prompt -&gt; llm -&gt; parser</span>
+    <span class="n">chain</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;context&quot;</span><span class="p">:</span> <span class="n">retriever</span> <span class="o">|</span> <span class="n">format_docs_for_prompt</span><span class="p">,</span>
+            <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="n">RunnablePassthrough</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="o">|</span> <span class="n">prompt_template</span>
+        <span class="o">|</span> <span class="n">llm</span>
+        <span class="o">|</span> <span class="n">StrOutputParser</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">chain</span></div>
+
+
+<div class="viewcode-block" id="rag_answer">
+<a class="viewcode-back" href="../../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_answer">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">rag_answer</span><span class="p">(</span><span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">chain</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute the RAG chain for a single question.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        question: The user query to answer.</span>
+<span class="sd">        chain: The runnable chain produced by ``build_rag_chain``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The generated answer text.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">question</span><span class="p">)</span></div>
+
+
+<span class="nd">@tool</span><span class="p">(</span><span class="s2">&quot;RAG tool&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rag_tool</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute RAG (Retrieval-Augmented Generation) for a given query.</span>
+
+<span class="sd">    Loads or builds the FAISS index from local documents, configures the</span>
+<span class="sd">    retriever and chat model, and returns an answer grounded in retrieved</span>
+<span class="sd">    context.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        query: The user question to answer.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The grounded answer including inline source citations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">SETTINGS</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TEST ######################################################## k: </span><span class="si">{</span><span class="n">settings</span><span class="o">.</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 1) Componenti</span>
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">get_embeddings</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+    <span class="n">llm</span> <span class="o">=</span> <span class="n">get_llm</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+    
+    <span class="c1"># 2) Dati simulati e indicizzazione (load or build)</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">load_real_documents_from_folder</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">KB316GR</span><span class="se">\\</span><span class="s2">OneDrive - EY</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">Academy</span><span class="se">\\</span><span class="s2">26_agosto</span><span class="se">\\</span><span class="s2">es3_research_rag</span><span class="se">\\</span><span class="s2">rag_context&quot;</span><span class="p">)</span>
+    <span class="c1">#print(f&quot;Numero documenti caricati: {len(docs)}&quot;)</span>
+    <span class="c1">#print(&quot;Contenuto primo documento:&quot;, docs[0].page_content[:500])</span>
+    <span class="n">vector_store</span> <span class="o">=</span> <span class="n">load_or_build_vectorstore</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">docs</span><span class="p">)</span>
+
+    <span class="c1"># 3) Retriever ottimizzato</span>
+    <span class="n">retriever</span> <span class="o">=</span> <span class="n">make_retriever</span><span class="p">(</span><span class="n">vector_store</span><span class="p">,</span> <span class="n">settings</span><span class="p">)</span>
+
+    <span class="c1"># 4) Catena RAG</span>
+    <span class="n">chain</span> <span class="o">=</span> <span class="n">build_rag_chain</span><span class="p">(</span><span class="n">llm</span><span class="p">,</span> <span class="n">retriever</span><span class="p">)</span>
+
+    <span class="n">ans</span> <span class="o">=</span> <span class="n">rag_answer</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">chain</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sglavo Scaccia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

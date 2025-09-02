@@ -1,9 +1,0 @@
-crews
-======
-.. autosummary::
-   :toctree: _generated
-
-   search_rag_flow.crews.analysis_plot.analysis_plot
-   search_rag_flow.crews.math_crew.math_crew
-   search_rag_flow.crews.rag_crew.rag_crew
-   search_rag_flow.crews.search_crew.search_crew

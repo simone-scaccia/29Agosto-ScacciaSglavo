@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>search_rag_flow.main &mdash; SS MultiAgentSystem 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SS MultiAgentSystem
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tools.html">tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../math_tool.html">math_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../math_tool.html#search_rag_flow.tools.math_tool.is_math_function_valid"><code class="docutils literal notranslate"><span class="pre">is_math_function_valid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../math_tool.html#search_rag_flow.tools.math_tool.validate_math_expression.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../rag_tool.html">rag_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings"><code class="docutils literal notranslate"><span class="pre">Settings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.persist_dir"><code class="docutils literal notranslate"><span class="pre">Settings.persist_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.chunk_size"><code class="docutils literal notranslate"><span class="pre">Settings.chunk_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.chunk_overlap"><code class="docutils literal notranslate"><span class="pre">Settings.chunk_overlap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.search_type"><code class="docutils literal notranslate"><span class="pre">Settings.search_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.k"><code class="docutils literal notranslate"><span class="pre">Settings.k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.fetch_k"><code class="docutils literal notranslate"><span class="pre">Settings.fetch_k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.mmr_lambda"><code class="docutils literal notranslate"><span class="pre">Settings.mmr_lambda</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.Settings.llm_model_name"><code class="docutils literal notranslate"><span class="pre">Settings.llm_model_name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.get_embeddings"><code class="docutils literal notranslate"><span class="pre">get_embeddings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.get_llm"><code class="docutils literal notranslate"><span class="pre">get_llm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.load_real_documents_from_folder"><code class="docutils literal notranslate"><span class="pre">load_real_documents_from_folder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.split_documents"><code class="docutils literal notranslate"><span class="pre">split_documents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.build_faiss_vectorstore"><code class="docutils literal notranslate"><span class="pre">build_faiss_vectorstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.load_or_build_vectorstore"><code class="docutils literal notranslate"><span class="pre">load_or_build_vectorstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.make_retriever"><code class="docutils literal notranslate"><span class="pre">make_retriever()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.format_docs_for_prompt"><code class="docutils literal notranslate"><span class="pre">format_docs_for_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.build_rag_chain"><code class="docutils literal notranslate"><span class="pre">build_rag_chain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_answer"><code class="docutils literal notranslate"><span class="pre">rag_answer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rag_tool.html#search_rag_flow.tools.rag_tool.rag_tool.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../research_ddg_tool.html">research_ddg_tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../research_ddg_tool.html#search_rag_flow.tools.research_ddg_tool.research_ddg_tool.func"><code class="docutils literal notranslate"><span class="pre">func()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../main.html">main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../main.html#search_rag_flow.main.QueryProperties"><code class="docutils literal notranslate"><span class="pre">QueryProperties</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.QueryProperties.is_ethical"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_ethical</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.QueryProperties.reason"><code class="docutils literal notranslate"><span class="pre">QueryProperties.reason</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.QueryProperties.is_medicine"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_medicine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.QueryProperties.is_math"><code class="docutils literal notranslate"><span class="pre">QueryProperties.is_math</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.QueryProperties.model_config"><code class="docutils literal notranslate"><span class="pre">QueryProperties.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState"><code class="docutils literal notranslate"><span class="pre">SearchRAGState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.ethical_json"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.ethical_json</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.ethical_query"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.ethical_query</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.topic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.query"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.query</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.summary"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.summary</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.found_rag_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.found_rag_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.rag_response"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.rag_response</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.math_response"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.math_response</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGState.model_config"><code class="docutils literal notranslate"><span class="pre">SearchRAGState.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.get_query"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.get_query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.generate_plot"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.generate_plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.check_ethical_and_topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.check_ethical_and_topic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.split_ethical_and_topic"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.split_ethical_and_topic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.handle_not_ethical"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_not_ethical()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.handle_error"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.rag_approach"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.rag_approach()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.split_rag_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.split_rag_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.print_RAG_info"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.print_RAG_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.search_on_web"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.search_on_web()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main.html#search_rag_flow.main.SearchRAGFlow.handle_ethical_math"><code class="docutils literal notranslate"><span class="pre">SearchRAGFlow.handle_ethical_math()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../main.html#search_rag_flow.main.kickoff"><code class="docutils literal notranslate"><span class="pre">kickoff()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../main.html#search_rag_flow.main.plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../crews.html">crews</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../crews.html#analysisplotcrew">AnalysisPlotCrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../crews.html#module-search_rag_flow.crews.math_crew.math_crew">MathCrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../crews.html#module-search_rag_flow.crews.rag_crew.rag_crew">RagCrew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../crews.html#module-search_rag_flow.crews.search_crew.search_crew">SearchCrew</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SS MultiAgentSystem</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">search_rag_flow.main</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for search_rag_flow.main</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="sd">&quot;&quot;&quot;Main entry for SearchRAGFlow&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">crewai.flow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flow</span><span class="p">,</span> <span class="n">listen</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">router</span><span class="p">,</span> <span class="n">or_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">crewai.llm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">search_rag_flow.crews.search_crew.search_crew</span><span class="w"> </span><span class="kn">import</span> <span class="n">SearchCrew</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">search_rag_flow.crews.rag_crew.rag_crew</span><span class="w"> </span><span class="kn">import</span> <span class="n">RagCrew</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">search_rag_flow.crews.math_crew.math_crew</span><span class="w"> </span><span class="kn">import</span> <span class="n">MathCrew</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">search_rag_flow.crews.analysis_plot.analysis_plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnalysisPlotCrew</span>
+
+<div class="viewcode-block" id="QueryProperties">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.QueryProperties">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">QueryProperties</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents the ethical evaluation of a user query.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        is_ethical (bool): Indicates whether the query is ethical.</span>
+<span class="sd">        reason (str): The reason for the ethical evaluation, especially if not ethical.</span>
+<span class="sd">        is_medicine (bool): True if the query is related to medicine, False otherwise.</span>
+<span class="sd">        is_math (bool): True if the query is related to math, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">is_ethical</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">is_medicine</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">is_math</span><span class="p">:</span> <span class="nb">bool</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGState">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGState">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchRAGState</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents the state of the SearchRAGFlow.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        ethical_json (QueryProperties): The result of the ethical and topic evaluation of the user query.</span>
+<span class="sd">        ethical_query (bool): Indicates if the query is considered ethical.</span>
+<span class="sd">        topic (str): The identified topic of the query.</span>
+<span class="sd">        query (str): The original user query.</span>
+<span class="sd">        summary (str): A summary of the query or its results.</span>
+<span class="sd">        found_rag_info (bool): Whether relevant RAG (Retrieval-Augmented Generation) information was found.</span>
+<span class="sd">        rag_response (str): The response generated by the RAG system.</span>
+<span class="sd">        math_response (str): The response generated by the math system, if applicable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ethical_json</span><span class="p">:</span> <span class="n">QueryProperties</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">ethical_query</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">found_rag_info</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">rag_response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">math_response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchRAGFlow</span><span class="p">(</span><span class="n">Flow</span><span class="p">[</span><span class="n">SearchRAGState</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents the SearchRAGFlow.</span>
+
+<span class="sd">    This class is a Flow that processes user queries to determine if they are ethical,</span>
+<span class="sd">    and if so, whether they are related to medicine or math. It uses a RAG approach</span>
+<span class="sd">    to find relevant information and a math crew to perform calculations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="SearchRAGFlow.get_query">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.get_query">[docs]</a>
+    <span class="nd">@start</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_query</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prompt the user for a query and store it in flow state.</span>
+<span class="sd">        </span>
+<span class="sd">        This method serves as the entry point of the flow, collecting the user&#39;s</span>
+<span class="sd">        input query and storing it in the flow state for subsequent processing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Insert the query: &quot;</span><span class="p">)</span></div>
+
+
+    
+<div class="viewcode-block" id="SearchRAGFlow.generate_plot">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.generate_plot">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="n">get_query</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a plot based on the user query.</span>
+<span class="sd">        </span>
+<span class="sd">        This method triggers the AnalysisPlotCrew to create visualizations</span>
+<span class="sd">        based on the user&#39;s query. It runs in parallel with other flow steps.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generating plot...&quot;</span><span class="p">)</span>
+        <span class="n">AnalysisPlotCrew</span><span class="p">()</span><span class="o">.</span><span class="n">crew</span><span class="p">()</span><span class="o">.</span><span class="n">kickoff</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span>
+        <span class="p">})</span></div>
+
+
+    <span class="c1"># @listen(get_query)</span>
+<div class="viewcode-block" id="SearchRAGFlow.check_ethical_and_topic">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.check_ethical_and_topic">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_ethical_and_topic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Classify the query for ethics and topic (medicine vs math).</span>
+<span class="sd">        </span>
+<span class="sd">        This method uses an LLM to evaluate whether the user query is ethical</span>
+<span class="sd">        and determine if it relates to medicine or mathematics. The evaluation</span>
+<span class="sd">        is stored in the flow state for routing decisions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking if the query is ethical...&quot;</span><span class="p">)</span>
+
+        <span class="n">ethical_llm</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;azure/gpt-4o&quot;</span><span class="p">,</span> <span class="n">response_format</span><span class="o">=</span><span class="n">QueryProperties</span><span class="p">)</span>
+
+        <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant designed to output JSON. Your job is to evaluate if a given text is ethical or not.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            This is a query: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span><span class="si">}</span><span class="s2">, written by a user to find information on the internet.</span>
+<span class="s2">            Evaluate the following query and determine if it is ethical. Respond in JSON format.</span>
+<span class="s2">            If the query is ethical, respond with &quot;is_ethical&quot; set to True. If it is not ethical, respond with &quot;is_ethical&quot; set to False and provide a brief reason in &quot;reason&quot;.</span>
+<span class="s2">            Check the topic of the query and ensure if it regards Medicine or Math.</span>
+<span class="s2">            If the user asks for a math calculation, set &quot;is_math&quot; to True and &quot;is_medicine&quot; to False.</span>
+<span class="s2">            If the user writes a math expression, set &quot;is_math&quot; to True and &quot;is_medicine&quot; to False.</span>
+<span class="s2">            Consider Math also the case when the user implies a mathematical operation (e.g. &quot;What is 2 + 2?&quot; or &quot;If a train is traveling at 60 mph, how far will it go in 2 hours in kilometers?&quot;).</span>
+<span class="s2">            In all other cases, including those that regards theorical concepts, without the need to perform any calculation, set &quot;is_math&quot; to False.</span>
+<span class="s2">            If the topic is not Math, check if the topic is Medicine. If the topic is medicine, set &quot;is_medicine&quot; to True and &quot;is_math&quot; to False.</span>
+<span class="s2">            If the topic is neither Medicine nor Math, set both &quot;is_medicine&quot; and &quot;is_math&quot; to False.</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">}]</span>
+
+        <span class="n">ethical_response</span> <span class="o">=</span> <span class="n">ethical_llm</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+
+        <span class="c1"># Parse the JSON response</span>
+        <span class="n">ethics_evaluation_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ethical_response</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span> <span class="o">=</span> <span class="n">QueryProperties</span><span class="p">(</span><span class="o">**</span><span class="n">ethics_evaluation_dict</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_ethical</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_query</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_query</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+        
+<div class="viewcode-block" id="SearchRAGFlow.split_ethical_and_topic">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.split_ethical_and_topic">[docs]</a>
+    <span class="nd">@router</span><span class="p">(</span><span class="n">check_ethical_and_topic</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split_ethical_and_topic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Route execution based on ethics and identified topic.</span>
+<span class="sd">        </span>
+<span class="sd">        This router method determines the next step in the flow based on the</span>
+<span class="sd">        ethical evaluation and topic classification of the user query.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The route identifier for the next flow step:</span>
+<span class="sd">                - &quot;ethical_medicine&quot;: For ethical medical queries</span>
+<span class="sd">                - &quot;ethical_math&quot;: For ethical mathematical queries  </span>
+<span class="sd">                - &quot;ethical_not_medicine_not_math&quot;: For other ethical queries</span>
+<span class="sd">                - &quot;not_ethical&quot;: For unethical queries</span>
+<span class="sd">                - &quot;error&quot;: For unexpected evaluation results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_query</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_medicine</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_math</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;ethical_medicine&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_query</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_math</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_medicine</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;ethical_math&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_query</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_medicine</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_math</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;ethical_not_medicine_not_math&quot;</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_ethical</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;not_ethical&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;error&quot;</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow.handle_not_ethical">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.handle_not_ethical">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;not_ethical&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_not_ethical</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Notify and stop when the query is not ethical.</span>
+<span class="sd">        </span>
+<span class="sd">        This method handles the case where the user query has been deemed</span>
+<span class="sd">        unethical by the evaluation system. It displays a message and</span>
+<span class="sd">        terminates the flow execution.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=================================================&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The query is not ethical. Exiting...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow.handle_error">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.handle_error">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Report unexpected errors during ethics/topic evaluation.</span>
+<span class="sd">        </span>
+<span class="sd">        This method handles error cases that occur during the ethical</span>
+<span class="sd">        evaluation or topic classification process.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=================================================&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An error occurred during the check of the topic and the ethical property &quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow.rag_approach">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.rag_approach">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;ethical_medicine&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rag_approach</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the medicine RAG pipeline and store its response.</span>
+<span class="sd">        </span>
+<span class="sd">        This method executes the RAG (Retrieval-Augmented Generation) pipeline</span>
+<span class="sd">        for medical queries using the RagCrew. It determines whether relevant</span>
+<span class="sd">        information was found and updates the flow state accordingly.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The query is ethical and related to medicine.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running a RAG approach...&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================================================&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">rag_response</span> <span class="o">=</span> <span class="n">RagCrew</span><span class="p">()</span><span class="o">.</span><span class="n">crew</span><span class="p">()</span><span class="o">.</span><span class="n">kickoff</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span><span class="p">})</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">rag_response</span><span class="o">.</span><span class="n">raw</span> <span class="o">==</span> <span class="s2">&quot;False&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">found_rag_info</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">found_rag_info</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow.split_rag_info">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.split_rag_info">[docs]</a>
+    <span class="nd">@router</span><span class="p">(</span><span class="n">rag_approach</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split_rag_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Route based on whether relevant RAG info was found.</span>
+<span class="sd">        </span>
+<span class="sd">        This router determines the next step based on whether the RAG system</span>
+<span class="sd">        found relevant information for the medical query.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The route identifier:</span>
+<span class="sd">                - &quot;rag_info_found&quot;: When relevant information was found</span>
+<span class="sd">                - &quot;rag_info_not_found&quot;: When no relevant information was found</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">found_rag_info</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;rag_info_found&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;rag_info_not_found&quot;</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow.print_RAG_info">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.print_RAG_info">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;rag_info_found&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_RAG_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print the RAG response when relevant information is found.</span>
+<span class="sd">        </span>
+<span class="sd">        This method displays the RAG-generated response when relevant medical</span>
+<span class="sd">        information was successfully retrieved and processed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relevant information found with RAG:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================================================&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">rag_response</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SearchRAGFlow.search_on_web">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.search_on_web">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="n">or_</span><span class="p">(</span><span class="s2">&quot;ethical_not_medicine_not_math&quot;</span><span class="p">,</span> <span class="s2">&quot;rag_info_not_found&quot;</span><span class="p">))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search_on_web</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the web search crew and persist a brief summary to file.</span>
+<span class="sd">        </span>
+<span class="sd">        This method handles cases where either:</span>
+<span class="sd">        1. The query is ethical but not related to medicine or math</span>
+<span class="sd">        2. The query is medical but RAG found no relevant information</span>
+<span class="sd">        </span>
+<span class="sd">        It uses the SearchCrew to perform web searches and saves the results</span>
+<span class="sd">        to a summary file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_medicine</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The query is ethical but not related to medicine.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================================================&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">ethical_json</span><span class="o">.</span><span class="n">is_medicine</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">found_rag_info</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The query is ethical and related to medicine, but no relevant information was found with RAG.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============================================================&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Searching for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span><span class="si">}</span><span class="s2">...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">summary</span> <span class="o">=</span> <span class="p">(</span><span class="n">SearchCrew</span><span class="p">()</span><span class="o">.</span><span class="n">crew</span><span class="p">()</span><span class="o">.</span><span class="n">kickoff</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span><span class="p">}))</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">raw</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=================================================&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saving summary</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;summary.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="SearchRAGFlow.handle_ethical_math">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.SearchRAGFlow.handle_ethical_math">[docs]</a>
+    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;ethical_math&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_ethical_math</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the math crew for ethical math-related queries.</span>
+<span class="sd">        </span>
+<span class="sd">        This method handles mathematical queries that have been deemed ethical.</span>
+<span class="sd">        It uses the MathCrew to process the mathematical problem and stores</span>
+<span class="sd">        the result in the flow state.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=================================================&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The query is ethical and related to math.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Query: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="n">math_response</span> <span class="o">=</span> <span class="n">MathCrew</span><span class="p">()</span><span class="o">.</span><span class="n">crew</span><span class="p">()</span><span class="o">.</span><span class="n">kickoff</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">query</span><span class="p">})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">math_response</span> <span class="o">=</span> <span class="n">math_response</span><span class="o">.</span><span class="n">raw</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Math result: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">math_response</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="kickoff">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.kickoff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">kickoff</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Kick off execution of the SearchRAGFlow.</span>
+<span class="sd">    </span>
+<span class="sd">    This function creates a new SearchRAGFlow instance, starts its execution,</span>
+<span class="sd">    and generates a visualization plot of the flow.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">poem_flow</span> <span class="o">=</span> <span class="n">SearchRAGFlow</span><span class="p">()</span>
+    <span class="n">poem_flow</span><span class="o">.</span><span class="n">kickoff</span><span class="p">()</span>
+    <span class="n">poem_flow</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="plot">
+<a class="viewcode-back" href="../../main.html#search_rag_flow.main.plot">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the flow graph for visualization/debugging.</span>
+<span class="sd">    </span>
+<span class="sd">    This function creates a SearchRAGFlow instance and generates a visual</span>
+<span class="sd">    representation of the flow structure for debugging and documentation</span>
+<span class="sd">    purposes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">poem_flow</span> <span class="o">=</span> <span class="n">SearchRAGFlow</span><span class="p">()</span>
+    <span class="n">poem_flow</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">kickoff</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sglavo Scaccia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,6 +1,0 @@
-﻿search\_rag\_flow.crews.search\_crew
-====================================
-
-.. automodule:: search_rag_flow.crews.search_crew
-
-   
