@@ -1,0 +1,7 @@
+search\_rag\_flow.crews.math\_crew.math\_crew module
+===================================================
+
+.. automodule:: search_rag_flow.crews.math_crew.math_crew
+   :members:
+   :undoc-members:
+   :show-inheritance:

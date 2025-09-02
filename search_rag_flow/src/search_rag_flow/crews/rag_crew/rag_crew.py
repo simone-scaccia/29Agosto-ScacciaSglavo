@@ -1,21 +1,3 @@
-"""RAG crew configuration and assembly for the search_rag_flow project.
-
-This module defines the `RagCrew`, a set of agents and tasks orchestrated with
-`crewai` to perform a Retrieval-Augmented Generation (RAG) workflow. The crew
-is built using YAML-based configurations for agents and tasks, and it wires in
-project-specific tools where needed.
-
-The crew runs sequentially by default:
-1) Refine the user query
-2) Search documents with a retrieval tool
-3) Validate and generate the final response
-
-Note:
-- Agent and task configurations are expected to be present in the YAML files
-  referenced by `self.agents_config` and `self.tasks_config`, which are provided
-  by the `@CrewBase` decorator integration.
-"""
-
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
